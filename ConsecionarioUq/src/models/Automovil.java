@@ -4,8 +4,11 @@ import java.util.Arrays;
 
 import enums.AireAcondicionado;
 import enums.AsistentePermanencia;
+import enums.DisponibilidadVehiculo;
+import enums.SensorColision;
 import enums.TieneCamara;
 import enums.TieneSensor;
+import enums.TipoABS;
 import enums.TipoCombustible;
 import enums.TipoEstado;
 import enums.TipoTransmision;
@@ -15,19 +18,22 @@ public class Automovil extends Vehiculo {
 	    private int numPuertas;
 	    private TieneCamara tieneCamara;
 	    private TieneSensor tieneSensorTrafico;
+	    private  SensorColision tieneSensorColision;
 	    private int numBolsas;
 	    private AsistentePermanencia asistentePermanencia;
 	    private AireAcondicionado aireAcondicionado;
 
 	    public Automovil(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-	                     TipoCombustible combustible, TipoTransmision transmision, String[] fotos,
+	                     TipoCombustible combustible, TipoTransmision transmision, String[] fotos,int velocidadMaxima, TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad,
 	                     int numPasajeros, int numPuertas, TieneCamara tieneCamara, TieneSensor tieneSensorTrafico,
+	                     SensorColision tieneSensorColision,
 	                     int numBolsas, AsistentePermanencia asistentePermanencia, AireAcondicionado aireAcondicionado) {
-	        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos);
+	        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos,velocidadMaxima, tieneABS,placa,disponibilidad);
 	        this.numPasajeros = numPasajeros;
 	        this.numPuertas = numPuertas;
 	        this.tieneCamara = tieneCamara;
 	        this.tieneSensorTrafico = tieneSensorTrafico;
+	        this.tieneSensorColision = tieneSensorColision;
 	        this.numBolsas = numBolsas;
 	        this.asistentePermanencia = asistentePermanencia;
 	        this.aireAcondicionado = aireAcondicionado;
@@ -64,6 +70,16 @@ public class Automovil extends Vehiculo {
 	    public void setTieneSensorTrafico(TieneSensor tieneSensorTrafico) {
 	        this.tieneSensorTrafico = tieneSensorTrafico;
 	    }
+	    
+	    
+	    public SensorColision getTieneSensorColision() {
+	        return tieneSensorColision;
+	    }
+
+	    public void setTieneSensorTrafico(SensorColision tieneSensorColision) {
+	        this.tieneSensorColision = tieneSensorColision;
+	    }
+	        
 
 	    public int getNumBolsas() {
 	        return numBolsas;
@@ -80,6 +96,8 @@ public class Automovil extends Vehiculo {
 	    public void setAsistentePermanencia(AsistentePermanencia asistentePermanencia) {
 	        this.asistentePermanencia = asistentePermanencia;
 	    }
+	    
+	    
 
 	    public AireAcondicionado getAireAcondicionado() {
 	        return aireAcondicionado;
@@ -100,13 +118,19 @@ public class Automovil extends Vehiculo {
 	                ", combustible=" + getCombustible() +
 	                ", transmision=" + getTransmision() +
 	                ", fotos=" + Arrays.toString(getFotos()) +
+	                ", velocidadMaxima=" + getVelocidadMaxima() +
+	                ", tieneABS=" + getTieneABS() +
+	                ", placa='" + getPlaca() + '\'' +
+	                ", disponibilidad=" + getDisponibilidad() +
 	                ", numPasajeros=" + numPasajeros +
 	                ", numPuertas=" + numPuertas +
 	                ", tieneCamara=" + tieneCamara +
 	                ", tieneSensorTrafico=" + tieneSensorTrafico +
+	                ", tieneSensorColision=" + tieneSensorColision +
 	                ", numBolsas=" + numBolsas +
 	                ", asistentePermanencia=" + asistentePermanencia +
 	                ", aireAcondicionado=" + aireAcondicionado +
 	                '}';
 	    }
+
 	}

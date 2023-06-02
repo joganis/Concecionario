@@ -13,12 +13,12 @@ import enums.TipoEstado;
 import enums.TipoTransmision;
 
 public class Moto extends Automovil {
-    public Moto(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-                TipoCombustible combustible, TipoTransmision transmision, String[] fotos, int velocidadMaxima, TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad,
+    public Moto(int precio,String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
+                TipoCombustible combustible, TipoTransmision transmision, String foto, int velocidadMaxima, TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad,
                 int numPasajeros, int numPuertas, TieneCamara tieneCamara, TieneSensor tieneSensorTrafico,
                 SensorColision tieneSensorColision,
                 int numBolsas, AsistentePermanencia asistentePermanencia, AireAcondicionado aireAcondicionado) {
-        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos, velocidadMaxima, tieneABS,placa,disponibilidad,
+        super(precio,marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, foto, velocidadMaxima, tieneABS,placa,disponibilidad,
                 numPasajeros, numPuertas, tieneCamara, tieneSensorTrafico, tieneSensorColision,
                 numBolsas, asistentePermanencia, aireAcondicionado);
     }
@@ -26,6 +26,7 @@ public class Moto extends Automovil {
     @Override
     public String toString() {
         return "Moto{" +
+        		"precio='" + getPrecio() + '\'' +
                 "marca='" + getMarca() + '\'' +
                 ", modelo='" + getModelo() + '\'' +
                 ", estadoV=" + getEstadoV() +
@@ -33,7 +34,7 @@ public class Moto extends Automovil {
                 ", cilindraje=" + getCilindraje() +
                 ", combustible=" + getCombustible() +
                 ", transmision=" + getTransmision() +
-                ", fotos=" + Arrays.toString(getFotos()) +
+                ", fotos=" + getFotos() +
                 ", numPasajeros=" + getNumPasajeros() +
                 ", numPuertas=" + getNumPuertas() +
                 ", tieneCamara=" + getTieneCamara() +

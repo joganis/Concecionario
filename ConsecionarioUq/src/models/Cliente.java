@@ -1,8 +1,10 @@
 package models;
 
+import enums.TipoUsuarioEmpresa;
+
 public class Cliente extends Persona {
-    public Cliente(String nombre, String apellido, String cedula, String correo, String contraseña) {
-        super(nombre, apellido, cedula, correo, contraseña);
+    public Cliente(String nombre, String apellido, String cedula, String correo, String contraseña,TipoUsuarioEmpresa tipoDeUsuario) {
+        super(nombre, apellido, cedula, correo, contraseña, tipoDeUsuario);
     }
 
     
@@ -14,6 +16,7 @@ public class Cliente extends Persona {
                 ", cedula='" + getCedula() + '\'' +
                 ", correo='" + getCorreo() + '\'' +
                 ", contraseña='" + getContraseña() + '\'' +
+                ", tipo usuario='" + getTipoUsuario() + '\'' +
                 '}';
     }
 }

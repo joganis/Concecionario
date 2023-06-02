@@ -1,5 +1,5 @@
 package enums;
 
 public enum TipoCamion {
-VOLQUETA, REMOLQUE, TANQUE
+VOLQUETA, REMOLQUE, TANQUE, CARGA
 }

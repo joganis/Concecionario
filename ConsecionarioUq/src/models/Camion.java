@@ -14,11 +14,11 @@ public class Camion extends Vehiculo {
     private TipoCamion tipoCamion;
     private int numEjes;
 
-    public Camion(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-                  TipoCombustible combustible, TipoTransmision transmision, String[] fotos, int velocidadMaxima,
+    public Camion(int precio,String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
+                  TipoCombustible combustible, TipoTransmision transmision, String foto, int velocidadMaxima,
                   TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad, double capacidadCarga,
                   TipoFrenoAire tipoFrenoAire, TipoCamion tipoCamion, int numEjes) {
-        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos, velocidadMaxima, tieneABS,
+        super(precio,marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, foto, velocidadMaxima, tieneABS,
                 placa, disponibilidad);
         this.capacidadCarga = capacidadCarga;
         this.tipoFrenoAire = tipoFrenoAire;
@@ -61,6 +61,7 @@ public class Camion extends Vehiculo {
     @Override
     public String toString() {
         return "Camion{" +
+        		"precio='" + getPrecio() + '\'' +
                 "marca='" + getMarca() + '\'' +
                 ", modelo='" + getModelo() + '\'' +
                 ", estadoV=" + getEstadoV() +
@@ -68,7 +69,7 @@ public class Camion extends Vehiculo {
                 ", cilindraje=" + getCilindraje() +
                 ", combustible=" + getCombustible() +
                 ", transmision=" + getTransmision() +
-                ", fotos=" + Arrays.toString(getFotos()) +
+                ", fotos=" + getFotos() +
                 ", velocidadMaxima=" + getVelocidadMaxima() +
                 ", tieneABS=" + getTieneABS() +
                 ", placa='" + getPlaca() + '\'' +

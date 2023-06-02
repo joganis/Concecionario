@@ -7,6 +7,7 @@ import enums.TipoEstado;
 import enums.TipoTransmision;
 
 public abstract class Vehiculo {
+	private int precio;
     private String marca;
     private String modelo;
     private TipoEstado estadoV;
@@ -14,15 +15,16 @@ public abstract class Vehiculo {
     private int cilindraje;
     private TipoCombustible combustible;
     private TipoTransmision transmision;
-    private String[] fotos;
+    private String foto;
     private int velocidadMaxima;
     private TipoABS tieneABS;
     private String placa;
     private DisponibilidadVehiculo disponibilidad;
 
-    public Vehiculo(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-                    TipoCombustible combustible, TipoTransmision transmision, String[] fotos,
+    public Vehiculo(int precio, String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
+                    TipoCombustible combustible, TipoTransmision transmision, String foto,
                     int velocidadMaxima, TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad) {
+    	this.precio = precio;
         this.marca = marca;
         this.modelo = modelo;
         this.estadoV = estadoV;
@@ -30,11 +32,19 @@ public abstract class Vehiculo {
         this.cilindraje = cilindraje;
         this.combustible = combustible;
         this.transmision = transmision;
-        this.fotos = fotos;
+        this.foto = foto;
         this.velocidadMaxima = velocidadMaxima;
         this.tieneABS = tieneABS;
         this.placa = placa;
         this.disponibilidad = disponibilidad;
+    }
+    
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrescio(int precio) {
+        this.precio = precio;
     }
 
     public String getMarca() {
@@ -93,12 +103,12 @@ public abstract class Vehiculo {
         this.transmision = transmision;
     }
 
-    public String[] getFotos() {
-        return fotos;
+    public String getFotos() {
+        return foto;
     }
 
-    public void setFotos(String[] fotos) {
-        this.fotos = fotos;
+    public void setFotos(String foto) {
+        this.foto = foto;
     }
 
     public int getVelocidadMaxima() {

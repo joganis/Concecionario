@@ -13,11 +13,11 @@ public class Sedan extends Vehiculo {
     private double capacidadMaletero;
     private TipoVelocidad velocidadCrucero;
 
-    public Sedan(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-                 TipoCombustible combustible, TipoTransmision transmision, String[] fotos, int velocidadMaxima, TipoABS tieneABS,
+    public Sedan(int precio,String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
+                 TipoCombustible combustible, TipoTransmision transmision, String foto, int velocidadMaxima, TipoABS tieneABS,
                  TipoVelocidad velocidadCrucero, double capacidadMaletero, String placa,
                  DisponibilidadVehiculo disponibilidad) {
-        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos, velocidadMaxima, tieneABS, placa,
+        super(precio, marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, foto, velocidadMaxima, tieneABS, placa,
                 disponibilidad);
         this.capacidadMaletero = capacidadMaletero;
         this.velocidadCrucero = velocidadCrucero;
@@ -42,6 +42,7 @@ public class Sedan extends Vehiculo {
     @Override
     public String toString() {
         return "Sedan{" +
+        		"precio='" + getPrecio() + '\'' +
                 "marca='" + getMarca() + '\'' +
                 ", modelo='" + getModelo() + '\'' +
                 ", estadoV=" + getEstadoV() +
@@ -49,7 +50,7 @@ public class Sedan extends Vehiculo {
                 ", cilindraje=" + getCilindraje() +
                 ", combustible=" + getCombustible() +
                 ", transmision=" + getTransmision() +
-                ", fotos=" + Arrays.toString(getFotos()) +
+                ", fotos=" + getFotos() +
                 ", velocidadMaxima=" + getVelocidadMaxima() +
                 ", tieneABS=" + getTieneABS() +
                 ", placa='" + getPlaca() + '\'' +

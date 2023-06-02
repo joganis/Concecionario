@@ -10,11 +10,11 @@ public class Bus extends Vehiculo {
     private int numSalidasEmergencia;
     private double capacidadMaletero;
 
-    public Bus(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-               TipoCombustible combustible, TipoTransmision transmision, String[] fotos, int velocidadMaxima,
+    public Bus(int precio,String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
+               TipoCombustible combustible, TipoTransmision transmision, String foto, int velocidadMaxima,
                TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad, int numEjes,
                int numSalidasEmergencia, double capacidadMaletero) {
-        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos, velocidadMaxima,
+        super(precio,marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, foto, velocidadMaxima,
                 tieneABS, placa, disponibilidad);
         this.numEjes = numEjes;
         this.numSalidasEmergencia = numSalidasEmergencia;
@@ -48,6 +48,7 @@ public class Bus extends Vehiculo {
     @Override
     public String toString() {
         return "Bus{" +
+        		"precio='" + getPrecio() + '\'' +
                 "marca='" + getMarca() + '\'' +
                 ", modelo='" + getModelo() + '\'' +
                 ", estadoV=" + getEstadoV() +
@@ -55,7 +56,7 @@ public class Bus extends Vehiculo {
                 ", cilindraje=" + getCilindraje() +
                 ", combustible=" + getCombustible() +
                 ", transmision=" + getTransmision() +
-                ", fotos=" + java.util.Arrays.toString(getFotos()) +
+                ", fotos=" + getFotos() +
                 ", velocidadMaxima=" + getVelocidadMaxima() +
                 ", tieneABS=" + getTieneABS() +
                 ", placa='" + getPlaca() + '\'' +

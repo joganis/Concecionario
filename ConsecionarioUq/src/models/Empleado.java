@@ -3,13 +3,14 @@ package models;
 
 
 import enums.TipoEstadoUsuario;
+import enums.TipoUsuarioEmpresa;
 
 
 public class Empleado extends Persona {
     private TipoEstadoUsuario estado;
 
-    public Empleado(String nombre, String apellido, String cedula, String correo, String contraseña, TipoEstadoUsuario estado) {
-        super(nombre, apellido, cedula, correo, contraseña);
+    public Empleado(String nombre, String apellido, String cedula, String correo, String contraseña, TipoEstadoUsuario estado, TipoUsuarioEmpresa tipoDeUsuario) {
+        super(nombre, apellido, cedula, correo, contraseña,tipoDeUsuario);
       
         this.estado = estado;
     }
@@ -33,6 +34,7 @@ public class Empleado extends Persona {
                 ", cedula='" + getCedula() + '\'' +
                 ", correo='" + getCorreo() + '\'' +
                 ", contraseña='" + getContraseña() + '\'' +
+                ", tipo usuario='" + getTipoUsuario() + '\'' +
                 ", estado=" + estado +
                 '}';
     }

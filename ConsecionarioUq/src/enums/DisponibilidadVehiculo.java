@@ -1,5 +1,5 @@
 package enums;
 
 public enum DisponibilidadVehiculo {
-	SI,NO
+	SI,NO, DISPONIBLE
 }

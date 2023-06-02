@@ -13,11 +13,11 @@ public class Suv_Camioneta extends Vehiculo {
     private TipoVelocidad velocidadCrucero;
     private Tipo4x4 es4x4;
 
-    public Suv_Camioneta(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-                         TipoCombustible combustible, TipoTransmision transmision, String[] fotos,
+    public Suv_Camioneta(int precio,String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
+                         TipoCombustible combustible, TipoTransmision transmision, String foto,
                          int velocidadMaxima, TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad,
                          double capacidadMaletero, TipoVelocidad velocidadCrucero, Tipo4x4 es4x4) {
-        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos, velocidadMaxima,
+        super(precio,marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, foto, velocidadMaxima,
                 tieneABS, placa, disponibilidad);
         this.capacidadMaletero = capacidadMaletero;
         this.velocidadCrucero = velocidadCrucero;
@@ -51,6 +51,7 @@ public class Suv_Camioneta extends Vehiculo {
     @Override
     public String toString() {
         return "Suv_Camioneta{" +
+        		"precio='" + getPrecio() + '\'' +
                 "marca='" + getMarca() + '\'' +
                 ", modelo='" + getModelo() + '\'' +
                 ", estadoV=" + getEstadoV() +
@@ -58,7 +59,7 @@ public class Suv_Camioneta extends Vehiculo {
                 ", cilindraje=" + getCilindraje() +
                 ", combustible=" + getCombustible() +
                 ", transmision=" + getTransmision() +
-                ", fotos=" + java.util.Arrays.toString(getFotos()) +
+                ", fotos=" + getFotos() +
                 ", velocidadMaxima=" + getVelocidadMaxima() +
                 ", tieneABS=" + getTieneABS() +
                 ", placa='" + getPlaca() + '\'' +

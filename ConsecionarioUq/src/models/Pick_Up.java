@@ -11,11 +11,11 @@ public class Pick_Up extends Vehiculo {
     private Tipo4x4 es4x4;
     private double capacidadCajaCarga;
 
-    public Pick_Up(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-                   TipoCombustible combustible, TipoTransmision transmision, String[] fotos,
+    public Pick_Up(int precio,String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
+                   TipoCombustible combustible, TipoTransmision transmision, String foto,
                    int velocidadMaxima, TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad,
                    Tipo4x4 es4x4, double capacidadCajaCarga) {
-        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos, velocidadMaxima,
+        super(precio,marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, foto, velocidadMaxima,
                 tieneABS, placa, disponibilidad);
         this.es4x4 = es4x4;
         this.capacidadCajaCarga = capacidadCajaCarga;
@@ -40,6 +40,7 @@ public class Pick_Up extends Vehiculo {
     @Override
     public String toString() {
         return "Pick_Up{" +
+        		"precio='" + getPrecio() + '\'' +
                 "marca='" + getMarca() + '\'' +
                 ", modelo='" + getModelo() + '\'' +
                 ", estadoV=" + getEstadoV() +
@@ -47,7 +48,7 @@ public class Pick_Up extends Vehiculo {
                 ", cilindraje=" + getCilindraje() +
                 ", combustible=" + getCombustible() +
                 ", transmision=" + getTransmision() +
-                ", fotos=" + java.util.Arrays.toString(getFotos()) +
+                ", fotos=" + getFotos() +
                 ", velocidadMaxima=" + getVelocidadMaxima() +
                 ", tieneABS=" + getTieneABS() +
                 ", placa='" + getPlaca() + '\'' +

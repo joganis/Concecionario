@@ -23,12 +23,12 @@ public class Automovil extends Vehiculo {
 	    private AsistentePermanencia asistentePermanencia;
 	    private AireAcondicionado aireAcondicionado;
 
-	    public Automovil(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-	                     TipoCombustible combustible, TipoTransmision transmision, String[] fotos,int velocidadMaxima, TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad,
+	    public Automovil( int precio,String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
+	                     TipoCombustible combustible, TipoTransmision transmision, String foto,int velocidadMaxima, TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad,
 	                     int numPasajeros, int numPuertas, TieneCamara tieneCamara, TieneSensor tieneSensorTrafico,
 	                     SensorColision tieneSensorColision,
 	                     int numBolsas, AsistentePermanencia asistentePermanencia, AireAcondicionado aireAcondicionado) {
-	        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos,velocidadMaxima, tieneABS,placa,disponibilidad);
+	        super(precio,marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, foto,velocidadMaxima, tieneABS,placa,disponibilidad);
 	        this.numPasajeros = numPasajeros;
 	        this.numPuertas = numPuertas;
 	        this.tieneCamara = tieneCamara;
@@ -110,6 +110,7 @@ public class Automovil extends Vehiculo {
 	    @Override
 	    public String toString() {
 	        return "Automovil{" +
+	        		"precio='" + getPrecio() + '\'' +
 	                "marca='" + getMarca() + '\'' +
 	                ", modelo='" + getModelo() + '\'' +
 	                ", estadoV=" + getEstadoV() +
@@ -117,7 +118,7 @@ public class Automovil extends Vehiculo {
 	                ", cilindraje=" + getCilindraje() +
 	                ", combustible=" + getCombustible() +
 	                ", transmision=" + getTransmision() +
-	                ", fotos=" + Arrays.toString(getFotos()) +
+	                ", fotos=" + getFotos() +
 	                ", velocidadMaxima=" + getVelocidadMaxima() +
 	                ", tieneABS=" + getTieneABS() +
 	                ", placa='" + getPlaca() + '\'' +

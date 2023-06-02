@@ -11,11 +11,11 @@ import enums.TipoTransmision;
 public class Van extends Vehiculo {
     private double capacidadMaletero;
 
-    public Van(String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
-               TipoCombustible combustible, TipoTransmision transmision, String[] fotos,
+    public Van(int precio,String marca, String modelo, TipoEstado estadoV, int cambios, int cilindraje,
+               TipoCombustible combustible, TipoTransmision transmision, String foto,
                int velocidadMaxima, TipoABS tieneABS, String placa, DisponibilidadVehiculo disponibilidad,
                double capacidadMaletero) {
-        super(marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, fotos,
+        super(precio, marca, modelo, estadoV, cambios, cilindraje, combustible, transmision, foto,
                 velocidadMaxima, tieneABS, placa, disponibilidad);
         this.capacidadMaletero = capacidadMaletero;
     }
@@ -31,6 +31,7 @@ public class Van extends Vehiculo {
     @Override
     public String toString() {
         return "Van{" +
+        		"precio='" + getPrecio() + '\'' +
                 "marca='" + getMarca() + '\'' +
                 ", modelo='" + getModelo() + '\'' +
                 ", estadoV=" + getEstadoV() +
@@ -38,7 +39,7 @@ public class Van extends Vehiculo {
                 ", cilindraje=" + getCilindraje() +
                 ", combustible=" + getCombustible() +
                 ", transmision=" + getTransmision() +
-                ", fotos=" + Arrays.toString(getFotos()) +
+                ", fotos=" + getFotos() +
                 ", velocidadMaxima=" + getVelocidadMaxima() +
                 ", tieneABS=" + getTieneABS() +
                 ", placa='" + getPlaca() + '\'' +

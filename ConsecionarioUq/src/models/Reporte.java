@@ -5,11 +5,11 @@ import enums.TipoTramite;
 public class Reporte {
     private Cliente cliente;
     private String fecha;
-    private Empleado empleado;
+    private Persona empleado;
     private TipoTramite tramite;
     private Vehiculo vehiculo;
 
-    public Reporte(Cliente cliente, String fecha, Empleado empleado, TipoTramite tramite, Vehiculo vehiculo) {
+    public Reporte(Cliente cliente, String fecha, Persona empleado, TipoTramite tramite, Vehiculo vehiculo) {
         this.cliente = cliente;
         this.fecha = fecha;
         this.empleado = empleado;
@@ -25,7 +25,7 @@ public class Reporte {
         return fecha;
     }
 
-    public Empleado getEmpleado() {
+    public Persona getEmpleado() {
         return empleado;
     }
 
